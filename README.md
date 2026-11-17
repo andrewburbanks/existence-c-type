@@ -24,6 +24,14 @@ The notebook uses the `Distributed` module for multiprocessing. The number of pr
 addprocs(12)
 ```
 
+### Truncation degree
+
+The homogeneous truncation degree for the polynomial part of the space is set using, for example
+
+```
+const N::Int64 = 24
+```
+
 ### Crude rounding
 
 The rounding model enabled in the demonstration notebook works with a wide variety of `Julia` versions. This mode is selected using the following flags near the top of the notebook (here, `RR` denotes the datatype to use for Representable Reals):
@@ -39,6 +47,16 @@ Data files stored during this run are provided in the `dat/` folder. Loading the
 
 ```
 const use_precomputed = true
+```
+
+Note: precomputed results are provided for `N=24` using `RR = Float64` and `use_crude_rounding = true`.
+
+### Reproducing figures
+
+Some of the figures in the paper are produced directly using the notebook. These are written to the `fig/` folder. The following flag is used to enable reproduction of the figures
+
+```
+const draw_figures = true
 ```
 
 ### IEEE rounding modes via LLVM
