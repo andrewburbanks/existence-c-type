@@ -43,7 +43,7 @@ const use_precomputed = true
 
 ### IEEE rounding modes via LLVM
 
-A more sophisticated (tighter bounds, slower) version also uses `Float64` but makes `LLVM` calls for the relevant `IEEE` directed rounding modes. Note that this will only work with particular versions of `Julia`, e.g., 1.10.1, because access to rounding modes has been deprecated in some later versions. This mode is selected via
+A more sophisticated (tighter bounds, slower) version also uses `Float64` but makes `LLVM` calls for the relevant `IEEE` directed rounding modes. Note that this will only work with particular versions of `Julia`, typically those before `1.10`, because access to rounding modes has been deprecated in some later versions. This mode is selected via
 
 ```
 const RR = Float64
