@@ -78,7 +78,7 @@ const RR = BigFloat; setprecision(BigFloat, 256) #example
 
 When using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
 
-### Requirements
+## Requirements
 
 We have used `Julia 1.10.1` for the results included here. The following `Julia` packages are used:
 * `Distributed`, `Serialization`
