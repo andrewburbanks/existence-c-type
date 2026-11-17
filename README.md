@@ -2,6 +2,14 @@
 
 Supporting code for the paper *Existence of the C-type Renormalisation Two-Cycle*.
 
+## Authors
+
+* Zainab Rahman [ORCiD:0009-0000-6028-8358](https://orcid.org/0009-0000-6028-8358)
+* Maria Pickett [ORCiD:0000-0002-3601-1989](https://orcid.org/0000-0002-3601-1989)
+* Andrew Burbanks [ORCiD:0000-0003-0685-6670](https://orcid.org/0000-0003-0685-6670) (*)
+
+(*) Corresponding Author - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
+
 ## Abstract
 
 > We prove the existence of the C-type renormalisation two-cycle, helping to establish the universality of the C-type route to chaos in families of non-invertible maps of the plane.
@@ -107,14 +115,6 @@ URL: [https://arxiv.org/abs/2606.06274](https://arxiv.org/abs/2606.06274)
 Ideas and comments are welcome. Please email the corresponding author.
 
 ## Notes
-
-## Authors
-
-* Zainab Rahman [ORCiD:0009-0000-6028-8358](https://orcid.org/0009-0000-6028-8358)
-* Maria Pickett [ORCiD:0000-0002-3601-1989](https://orcid.org/0000-0002-3601-1989)
-* Andrew Burbanks [ORCiD:0000-0003-0685-6670](https://orcid.org/0000-0003-0685-6670) (*)
-
-(*) Corresponding Author - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
 
 ## License
 
