@@ -110,9 +110,9 @@ Ideas and comments are welcome. Please email the corresponding author.
 
 ## Authors
 
-* [Zainab Rahman <img src="/ORCID-iD_icon-vector.svg" alt="ORCID Logo"/>](https://orcid.org/0009-0000-6028-8358)
-* [Maria Pickett <img src="/ORCID-iD_icon-vector.svg" alt="ORCID Logo"/>](https://orcid.org/0000-0002-3601-1989)
-* [Andrew Burbanks <img src="/ORCID-iD_icon-vector.svg" alt="ORCID Logo"/>](https://orcid.org/0000-0003-0685-6670)  - Corresponding Author - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
+* Zainab Rahman [ORCiD:0009-0000-6028-8358](https://orcid.org/0009-0000-6028-8358)
+* Maria Pickett [ORCiD:0000-0002-3601-1989](https://orcid.org/0000-0002-3601-1989)
+* Andrew Burbanks [ORCiD:0000-0003-0685-6670](https://orcid.org/0000-0003-0685-6670)  - Corresponding Author - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
 
 ## License
 
