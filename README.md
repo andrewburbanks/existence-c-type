@@ -14,16 +14,64 @@ Supporting code for the paper *Existence of the C-type Renormalisation Two-Cycle
 
 ## Getting Started
 
+The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with truncation (homogeneous) degree $N=24$ using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
+
+### Distributed
+
+The notebook uses the `Distributed` module for multiprocessing. The number of processors to use should be set near the top of the notebook by editing the line that reads, e.g.,
+
+```
+addprocs(12)
+```
+
+### Crude rounding
+
+The rounding model enabled in the demonstration notebook works with a wide variety of `Julia` versions. This mode is selected using the following flags near the top of the notebook (here, `RR` denotes the datatype to use for Representable Reals):
+
+```
+const RR = Float64
+const use_crude_rounding = true
+```
+
+### Using previously-computed results
+
+Data files stored during this run are provided in the `dat/` folder. Loading these files, rather than repeating computations, is achieved using
+
+```
+const use_precomputed = true
+```
+
+### IEEE rounding modes via LLVM
+
+A more sophisticated (tighter bounds, slower) version also uses `Float64` but makes `LLVM` calls for the relevant `IEEE` directed rounding modes. Note that this will only work with particular versions of `Julia`, e.g., 1.10.1, because access to rounding modes has been deprecated in some later versions. This mode is selected via
+
+```
+const RR = Float64
+const use_crude_rounding = false
+```
+
+### IEEE rounding modes and multiprecision via `BigFloat`
+
+Finally, for multiprecision support, it is possible to use `BigFloat`. The relevant mode is selected via
+
+```
+const RR = BigFloat; setprecision(BigFloat, 256) #example
+```
+
+When using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
+
 ### Requirements
+
+We recommend at least `Julia 1.10.1` if using crude rounding.
 
 ## Publications
 
 The following preprint made use of this code.
 
-**Existence of the C-type renormalisation two-cycle**
-Zainab Rahman, Maria Pickett, Andrew Burbanks
-2026. arXiv 2606.06274, math.DS
-DOI: [https://doi.org/10.48550/arXiv.2606.06274](https://doi.org/10.48550/arXiv.2606.06274)
+__Existence of the C-type renormalisation two-cycle__<br />
+Zainab Rahman, Maria Pickett, Andrew Burbanks<br />
+2026. arXiv 2606.06274, math.DS<br />
+DOI: [https://doi.org/10.48550/arXiv.2606.06274](https://doi.org/10.48550/arXiv.2606.06274)<br />
 URL: [https://arxiv.org/abs/2606.06274](https://arxiv.org/abs/2606.06274) 
 
 ## Contributing
