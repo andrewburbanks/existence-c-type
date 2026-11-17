@@ -82,6 +82,15 @@ When using datatypes other than `Float64`, the `use_crude_rounding` flag is igno
 
 We recommend at least `Julia 1.10.1` if using crude rounding.
 
+## Manifest
+
+```
+dat/ - data files produced by successful run
+fig/ - figures produced for publication
+rigorous/ - Julia code adapting the framework of Eckmann, Koch, and Wittwer
+ctype_proof_n24.ipynb - Jupyter notebook that reproduces the proof
+```
+
 ## Publications
 
 The following preprint made use of this code.
