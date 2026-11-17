@@ -91,3 +91,8 @@ Ideas and comments are welcome. Please email the corresponding author.
 This code is licensed under the GNU General Public License version 3 (GPLv3).
 
 ## Acknowledgements
+
+Work related to this code was supported by the following mechanisms:
+* Andrew Burbanks would like to thank the Isaac Newton Institute for Mathematical Sciences (INI), Cambridge, for support and hospitality during an INI Retreat. This work was supported by EPSRC grant EP/Z000580/1.
+* The authors would also like to thank the International Centre for Mathematical Sciences (ICMS), Edinburgh, for support via Workshop Grant~2416-BUR, the London Mathematical Society (LMS) for support via the Scheme~1 Conference Grant~12502, and the Glasgow Mathematical Journal Trust (GMJT) for support via the GMJT ICMS Block Grant 2026/2027.
+* Zainab Rahman was supported by a PhD bursary from the School of Mathematics and Physics at the University of Portsmouth, UK, through the REF2021 Quality-related Research (QR) funding allocation.
