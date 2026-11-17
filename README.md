@@ -132,6 +132,7 @@ Work related to this code was supported by the following mechanisms:
 
 ## References
 
+The following references were useful in creating the code:
 * _A Computer-Assisted Proof of Universality for Area-Preserving Maps._ Jean Pierre Eckmann, Hans Koch, and Peter Wittwer. Memoirs of the American Mathematical Society, volume 47, number 289, ISBN 1-4704-0699-3; Providence, R.I., USA : American Mathematical Society 1984.
 * _Existence of the FS-type renormalisation ﬁxed point for unidirectionally-coupled pairs of maps._ Burbanks, A. D. & Osbaldestin, A. H., 20 Apr 2023, In: Journal of Physics A: Mathematical and Theoretical. 56, 17 p., 195202. DOI: [10.1088/1751-8121/acc7dd](https://doi.org/10.1088/1751-8121/acc7dd)
 * _andrewburbanks/existence-fs: Existence of the FS-type renormalisation fixed point [Software]_ Burbanks, A. (Creator), Zenodo, 3 Oct 2022. DOI: [10.5281/zenodo.7139006](https://doi.org/10.5281/zenodo.7139006)
