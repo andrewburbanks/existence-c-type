@@ -20,6 +20,20 @@ We prove the existence of the renormalisation two-cycle in a Banach space of ana
 
 The C-type scaling regularity occurs in a number of dynamical systems of interest, perhaps most notably in biologically-plausible models of nephron blood pressure autoregulation.
 
+## Manifest
+
+* `dat/` - data files produced by successful run.
+* `fig/` - figures produced for publication.
+* `rigorous/` - Julia code adapting the framework of Eckmann, Koch, and Wittwer. This provides rigorous bounds for operations on balls of functions analytic on bidiscs.
+* `ctype_proof_n24.ipynb` - Jupyter notebook that reproduces the proof.
+
+## Requirements
+
+We have used `Julia 1.10.1` for the results included here. The following `Julia` packages are used:
+* `Distributed`, `Serialization`
+* `Plots`, `LaTeXStrings`
+* `GenericSchur`
+
 ## Getting Started
 
 The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with (homogeneous) truncation degree `N=24` using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
@@ -85,20 +99,6 @@ const RR = BigFloat; setprecision(BigFloat, 256) #example
 ```
 
 When using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
-
-## Requirements
-
-We have used `Julia 1.10.1` for the results included here. The following `Julia` packages are used:
-* `Distributed`, `Serialization`
-* `Plots`, `LaTeXStrings`
-* `GenericSchur`
-
-## Manifest
-
-* `dat/` - data files produced by successful run.
-* `fig/` - figures produced for publication.
-* `rigorous/` - Julia code adapting the framework of Eckmann, Koch, and Wittwer. This provides rigorous bounds for operations on balls of functions analytic on bidiscs.
-* `ctype_proof_n24.ipynb` - Jupyter notebook that reproduces the proof.
 
 ## Publications
 
