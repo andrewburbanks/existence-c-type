@@ -1,6 +1,6 @@
 # existence-c-type
 
-> Supporting code for the paper *Existence of the C-type renormalisation two-cycle*.
+Supporting code for the paper *Existence of the C-type renormalisation two-cycle*.
 
 ## Authors
 
