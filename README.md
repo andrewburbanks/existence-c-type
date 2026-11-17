@@ -87,10 +87,10 @@ We have used `Julia 1.10.1` for the results included here. The following `Julia`
 
 ## Manifest
 
-* `dat/` - data files produced by successful run
-* `fig/` - figures produced for publication
-* `rigorous/` - Julia code adapting the framework of Eckmann, Koch, and Wittwer
-* `ctype_proof_n24.ipynb` - Jupyter notebook that reproduces the proof
+* `dat/` - data files produced by successful run.
+* `fig/` - figures produced for publication.
+* `rigorous/` - Julia code adapting the framework of Eckmann, Koch, and Wittwer. This provides rigorous bounds for operations on balls of functions analytic on bidiscs.
+* `ctype_proof_n24.ipynb` - Jupyter notebook that reproduces the proof.
 
 ## Publications
 
