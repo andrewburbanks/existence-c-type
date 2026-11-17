@@ -112,7 +112,7 @@ Ideas and comments are welcome. Please email the corresponding author.
 
 * Zainab Rahman
 * Maria Pickett
-* Andrew Burbanks - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
+* Andrew Burbanks - Corresponding Author - [andrew.burbanks@port.ac.uk](mailto:andrew.burbanks@port.ac.uk)
 
 ## License
 
