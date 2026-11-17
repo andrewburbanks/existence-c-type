@@ -26,6 +26,7 @@ The C-type scaling regularity occurs in a number of dynamical systems of interes
 * `fig/` - figures produced for publication.
 * `rigorous/` - Julia code adapting the framework of Eckmann, Koch, and Wittwer. This provides rigorous bounds for operations on balls of functions analytic on bidiscs.
 * `ctype_proof_n24.ipynb` - Jupyter notebook that reproduces the proof.
+* `ctype_proof_n24.html` - static web page version of the notebook; download and open in a browser.
 
 ## Requirements
 
@@ -37,6 +38,8 @@ We have used `Julia 1.10.1` for the results included here. The following `Julia`
 ## Getting Started
 
 The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with (homogeneous) truncation degree `N=24` using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
+
+Note: the file `ctype_proof_n24.html` is a static web page version of the notebook (and its output) that can be downloaded and opened with a web browser, so that Jupyter (and Julia) do not need to be installed in order to see the results.
 
 ### Distributed
 
