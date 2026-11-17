@@ -129,3 +129,11 @@ Work related to this code was supported by the following mechanisms:
 * Andrew Burbanks would like to thank the Isaac Newton Institute for Mathematical Sciences (INI), Cambridge, for support and hospitality during an INI Retreat. This work was supported by EPSRC grant EP/Z000580/1.
 * The authors would also like to thank the International Centre for Mathematical Sciences (ICMS), Edinburgh, for support via Workshop Grant 2416-BUR, the London Mathematical Society (LMS) for support via the Scheme 1 Conference Grant 12502, and the Glasgow Mathematical Journal Trust (GMJT) for support via the GMJT ICMS Block Grant 2026/2027.
 * Zainab Rahman was supported by a PhD bursary from the School of Mathematics and Physics at the University of Portsmouth, UK, through the REF2021 Quality-related Research (QR) funding allocation.
+
+## References
+
+* _A Computer-Assisted Proof of Universality for Area-Preserving Maps._ Jean Pierre Eckmann, Hans Koch, and Peter Wittwer. American Mathematical Soc., 1984
+* _Existence of the FS-type renormalisation ﬁxed point for unidirectionally-coupled pairs of maps._ Burbanks, A. D. & Osbaldestin, A. H., 20 Apr 2023, In: Journal of Physics A: Mathematical and Theoretical. 56, 17 p., 195202.
+* _andrewburbanks/existence-fs: Existence of the FS-type renormalisation fixed point [Software]_ Burbanks, A. (Creator), Zenodo, 3 Oct 2022. DOI: 10.5281/zenodo.7139006, https://zenodo.org/record/7139006
+* _Rigorous computer-assisted bounds on the period doubling renormalisation fixed point and eigenfunctions in maps with critical point of degree 4._ Burbanks, A., Osbaldestin, A. & Thurlby, J., 30 Nov 2021, In: Journal of Mathematical Physics. 62, 11, 18 p., 112701.
+* _Dataset for "Rigorous computer-assisted bounds on the period doubling renormalisation fixed point and eigenfunctions in maps with critical point of degree 4"._ Burbanks, A., Zenodo, 28 Oct 2021, DOI: 10.5281/zenodo.5608449
