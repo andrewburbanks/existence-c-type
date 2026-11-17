@@ -14,7 +14,7 @@ Supporting code for the paper *Existence of the C-type Renormalisation Two-Cycle
 
 ## Getting Started
 
-The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with truncation (homogeneous) degree $N=24$ using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
+The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with truncation (homogeneous) degree `N=24` using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
 
 ### Distributed
 
