@@ -1,5 +1,7 @@
 # Rigorous computational framework
 
+> Implements rigorous enclosures for computations involving intervals, rectangles, and balls of functions analytic on bidisc domains.
+
 ## Important components
 
 Preliminary:
