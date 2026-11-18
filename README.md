@@ -1,5 +1,7 @@
 # existence-c-type
 
+2025-10-01
+
 Supporting code for the paper *Existence of the C-type renormalisation two-cycle*.
 
 ## Authors
