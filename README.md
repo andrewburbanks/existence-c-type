@@ -121,7 +121,7 @@ Ideas and comments are welcome. Please email the corresponding author.
 
 ## Change log
 
-* 2026-11-18 Fresh repo with readme.md files and .html version.
+* 2026-11-18 Fresh repo with readme.md files, data, figures, .html version.
 * 2026-06-04 Initial preprint on arXiv.
 * 2025-10-01 Rigorous framework and proof code initial version.
 
