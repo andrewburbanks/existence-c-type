@@ -1,7 +1,5 @@
 # existence-c-type
 
-2025-10-01
-
 Supporting code for the paper *Existence of the C-type renormalisation two-cycle*.
 
 ## Authors
@@ -120,6 +118,12 @@ URL: [https://arxiv.org/abs/2606.06274](https://arxiv.org/abs/2606.06274)
 Ideas and comments are welcome. Please email the corresponding author.
 
 ## Notes
+
+## Change log
+
+* 2026-11-18 Fresh repo with readme.md files and .html version.
+* 2026-06-04 Initial preprint on arXiv.
+* 2025-10-01 Rigorous framework and proof code initial version.
 
 ## License
 
