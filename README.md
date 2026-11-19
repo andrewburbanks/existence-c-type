@@ -34,6 +34,7 @@ We have used `Julia 1.10.1` for the results included here. We have also tested o
 * `Distributed`, `Serialization`
 * `Plots`, `LaTeXStrings`
 * `GenericSchur`
+* `IJulia` (to ensure the relevant kernel is available via Jupyter)
 
 ## Getting Started
 
