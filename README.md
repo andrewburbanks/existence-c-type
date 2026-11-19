@@ -85,24 +85,24 @@ Some of the figures in the paper are produced directly using the notebook. These
 const draw_figures = true
 ```
 
-### IEEE rounding modes via LLVM
-
-A more sophisticated (tighter bounds, slower) version also uses `Float64` but makes `LLVM` calls for the relevant `IEEE` directed rounding modes. Note that this will only work with particular versions of `Julia`, typically those before `1.10`, because access to rounding modes has been deprecated in some later versions. This mode is selected via
-
-```
-const RR = Float64
-const use_crude_rounding = false
-```
-
 ### IEEE rounding modes and multiprecision via `BigFloat`
 
-Finally, for multiprecision support, it is possible to use `BigFloat`. The relevant mode is selected via
+For multiprecision support, and/or to use directed rounding modes, it is possible to use `BigFloat`. The relevant mode is selected via
 
 ```
 const RR = BigFloat; setprecision(BigFloat, 256) #example
 ```
 
-When using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
+Note that when using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
+
+### IEEE rounding modes via LLVM
+
+Code is also provided that uses `Float64` but makes `LLVM` calls for the relevant `IEEE` directed rounding modes. Note that this will only work with particular versions of `Julia`, typically those before `1.10`, because access to rounding modes has been deprecated in some later versions. This mode is selected via
+
+```
+const RR = Float64
+const use_crude_rounding = false
+```
 
 ## Publications
 
