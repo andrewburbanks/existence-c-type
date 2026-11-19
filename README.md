@@ -119,6 +119,8 @@ Ideas and comments are welcome. Please email the corresponding author.
 
 ## Notes
 
+As indicated above, when using `Float64` as the type for Representable Reals, LLVM access to rounding modes will only work in versions of Julia that provide access to it; Set `use_crude_rounding = true` in order to avoid LLVM use if needed. This does not affect `BigFloat` which provides its own directed rounding modes.
+
 ## Change log
 
 * 2026-11-18 Fresh repo with readme.md files, data, figures, .html version.
