@@ -30,7 +30,7 @@ The C-type scaling regularity occurs in a number of dynamical systems of interes
 
 ## Requirements
 
-We have used `Julia 1.10.1` for the results included here. The following `Julia` packages are used:
+We have used `Julia 1.10.1` for the results included here. We have also tested on the latest stable version `Julia 1.13.4`. The following `Julia` packages are used:
 * `Distributed`, `Serialization`
 * `Plots`, `LaTeXStrings`
 * `GenericSchur`
