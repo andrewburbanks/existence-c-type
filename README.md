@@ -58,7 +58,7 @@ The homogeneous truncation degree for the polynomial part of the space is set us
 const N::Int64 = 24
 ```
 
-### Crude rounding (+/-1ULP)
+### Crude rounding
 
 The rounding model enabled in the demonstration notebook works with a wide variety of `Julia` versions. This mode is selected using the following flags near the top of the notebook (here, `RR` denotes the datatype to use for Representable Reals):
 
