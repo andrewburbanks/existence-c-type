@@ -38,7 +38,7 @@ We have used `Julia 1.10.1` for the results included here. We have also tested o
 
 ## Getting Started
 
-The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with (homogeneous) truncation degree `N=24` using crude (fast) outward rounding of basic operations to next and previous `Float64` floats.
+The included `Jupyter` notebook `ctype_proof_n24.ipynb` provides the code and results from running the proof with (homogeneous) truncation degree `N=24` using crude (fast) outward rounding of upper and lower interval bounds on basic operations by 1ULP to the next and previous `Float64` floats.
 
 Note: the file `ctype_proof_n24.html` is a static web page version of the notebook (and its output) that can be downloaded and opened with a web browser, so that Jupyter (and Julia) do not need to be installed in order to see the results.
 
@@ -58,7 +58,7 @@ The homogeneous truncation degree for the polynomial part of the space is set us
 const N::Int64 = 24
 ```
 
-### Crude rounding
+### Crude rounding (+/-1ULP)
 
 The rounding model enabled in the demonstration notebook works with a wide variety of `Julia` versions. This mode is selected using the following flags near the top of the notebook (here, `RR` denotes the datatype to use for Representable Reals):
 
