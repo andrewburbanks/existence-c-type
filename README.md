@@ -90,7 +90,7 @@ const draw_figures = true
 For multiprecision support, and/or to use directed rounding modes, it is possible to use `BigFloat`. The relevant mode is selected via
 
 ```
-const RR = BigFloat; setprecision(BigFloat, 256) #example
+const RR = BigFloat; setprecision(BigFloat, 64) #example
 ```
 
 Note that when using datatypes other than `Float64`, the `use_crude_rounding` flag is ignored.
