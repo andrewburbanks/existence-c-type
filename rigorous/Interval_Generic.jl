@@ -223,7 +223,7 @@ function bound_quasi_power(k0, g_norm::Interval)
 end
     
 function bound_quasi_power_2(c::Interval, d::Interval, M::Int)
-    @assert c < 1 && d < 1
+    @assert c < Interval(1) && d < Interval(1)
     ceil_x_hat = Int(ceil(1/(1-c)).hi)
     biggest = d^M
     for j=2:ceil_x_hat
