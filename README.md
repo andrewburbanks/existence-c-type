@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1461408643.svg)](https://doi.org/10.5281/zenodo.24420600)
+
 # existence-c-type
 
 Supporting code for the paper *Existence of the C-type renormalisation two-cycle*. Provides rigorous enclosures for operations on balls of functions analytic on bidiscs. Applies this to prove the existence of the c-type two-cycle of the renormalisation operator for period-doubling in pairs of maps of the plane.
