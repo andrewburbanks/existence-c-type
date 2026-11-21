@@ -98,9 +98,9 @@ end
 #handle that tightness to 1ULP is not guaranteed for Float64 ^:
 @inline function sqr(x::Interval)
     if x.lo >= RR(0)
-        return Interval(widen(x.lo*x.lo, x.hi*x.hi))
+        return widen(x.lo*x.lo, x.hi*x.hi)
     elseif x.hi <= RR(0)
-        return Interval(widen(x.hi*x.hi, x.lo*x.lo))
+        return widen(x.hi*x.hi, x.lo*x.lo)
     else
         hi = nextfloat(max(x.lo*x.lo, x.hi*x.hi))
         return Interval(RR(0), hi)
