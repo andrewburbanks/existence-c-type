@@ -1,4 +1,5 @@
-<a href="https://doi.org/10.5281/zenodo.24420600"><img src="img/zenodo.24420600.svg" alt="DOI"></a>
+[![DOI All Versions](img/zenodo.24420600.svg)](https://doi.org/10.5281/zenodo.24420600)
+[![arXiv](img/arXiv-2606.06274.svg)](https://arxiv.org/abs/2606.06274)
 
 # existence-c-type
 
