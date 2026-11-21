@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1461408643.svg)](https://doi.org/10.5281/zenodo.24420600)
+<a href="https://doi.org/10.5281/zenodo.24420600"><img src="https://zenodo.org/badge/1461408643.svg" alt="DOI"></a>
 
 # existence-c-type
 
