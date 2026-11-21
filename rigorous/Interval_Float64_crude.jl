@@ -1,5 +1,3 @@
-import .Base: setrounding
-
 struct Interval
     lo::RR
     hi::RR
@@ -45,11 +43,8 @@ widen(lo, hi) = Interval(prevfloat(lo), nextfloat(hi))
 absr(x::Interval) = Interval(RR(0), max(abs(x.lo), abs(x.hi)))
 
 function +(x::Interval, y::Interval)
-    setrounding(RR, RoundDown)
     lo::RR = x.lo+y.lo
-    setrounding(RR, RoundUp)
     hi::RR = x.hi+y.hi
-    setrounding(RR, RoundNearest)
     widen(lo, hi)
 end
 
@@ -57,11 +52,8 @@ end
 (-)(x::Interval, y::Interval) = x+(-y)
 
 function +(x::Interval, a::Number)
-    setrounding(RR, RoundDown)
     lo::RR = x.lo+a
-    setrounding(RR, RoundUp)
     hi::RR = x.hi+a
-    setrounding(RR, RoundNearest)
     widen(lo, hi)
 end
 
@@ -70,28 +62,19 @@ end
 (-)(a::Number, x::Interval) = -x+a
 
 function *(x::Interval, y::Interval)
-    setrounding(RR, RoundDown)
     lo::RR = min(x.lo*y.lo, x.lo*y.hi, x.hi*y.lo, x.hi*y.hi)
-    setrounding(RR, RoundUp)
     hi::RR = max(x.lo*y.lo, x.lo*y.hi, x.hi*y.lo, x.hi*y.hi)
-    setrounding(RR, RoundNearest)
     widen(lo, hi)
 end
 
 function *(x::Interval, a::Number)
     if a >= 0
-        setrounding(RR, RoundDown)
         c::RR = x.lo*a
-        setrounding(RR, RoundUp)
         d::RR = x.hi*a
-        setrounding(RR, RoundNearest)
         widen(c, d)
     else
-        setrounding(RR, RoundDown)
         e::RR = x.hi*a
-        setrounding(RR, RoundUp)
         f::RR = x.lo*a
-        setrounding(RR, RoundNearest)
         widen(e, f)
     end
 end
@@ -102,11 +85,8 @@ function iRec(x::Interval)
     if 0 in x
         error("division by zero")
     else
-        setrounding(RR, RoundDown)
         lo::RR = 1/x.hi
-        setrounding(RR, RoundUp)
         hi::RR = 1/x.lo
-        setrounding(RR, RoundNearest)
         widen(lo, hi)
     end
 end
@@ -115,55 +95,81 @@ end
 (/)(x::Interval, a::Number) = x*(1/a)
 (/)(a::Number, x::Interval) = a*iRec(x)
 
-function ^(x::Interval, n::Integer)
-    if n%2 == 1 || x.lo >= 0
-        # odd power
-        setrounding(RR, RoundDown)
-        a::RR = x.lo^n
-        setrounding(RR, RoundUp)
-        b::RR = x.hi^n
-        setrounding(RR, RoundNearest)
-        return widen(a, b)
-    elseif x.hi < 0
-        setrounding(RR, RoundDown)
-        c::RR = x.hi^n
-        setrounding(RR, RoundUp)
-        d::RR = x.lo^n
-        setrounding(RR, RoundNearest)
-        return widen(c, d)
+#handle that tightness to 1ULP is not guaranteed for Float64 ^:
+@inline function sqr(x::Interval)
+    if x.lo >= RR(0)
+        return Interval(widen(x.lo*x.lo, x.hi*x.hi))
+    elseif x.hi <= RR(0)
+        return Interval(widen(x.hi*x.hi, x.lo*x.lo))
     else
-        setrounding(RR, RoundUp)
-        e::RR = x.lo^n
-        f::RR = x.hi^n
-        setrounding(RR, RoundNearest)
-        return Interval(0, nextfloat(max(e, f)))
+        hi = nextfloat(max(x.lo*x.lo, x.hi*x.hi))
+        return Interval(RR(0), hi)
+    end
+end
+
+#power using the above repeated squaring
+function russian_sqr(t::Interval, p::Integer)
+    if p == 0
+        return one(t)
+    elseif p == 1
+        return t
+    end
+    
+    # ignore trailing zeros in binary expansion
+    trailing = trailing_zeros(p) + 1
+    p >>= trailing
+    
+    # repeatedly square
+    while (trailing -= 1) > 0
+        t = sqr(t)
+    end
+    
+    # compute the rest
+    u = t
+    while p > 0
+        trailing = trailing_zeros(p) + 1
+        p >>= trailing
+        while (trailing -= 1) >= 0
+            t = sqr(t)
+        end
+        u *= t
+    end
+    u
+end
+
+#gain tight bounds by applying the above to singleton intervals
+#to avoid dependency problems
+function (^)(x::Interval, p::Integer)
+    p == 0 && return Interval(1)
+    p == 1 && return x
+    p < 0 && return Interval(1)/(x^ unsigned(-p))
+
+    if x.lo >= RR(0) || x.hi <= RR(0)
+        return russian_sqr(x, p)
+    end
+    
+    if isodd(p)
+        lo = russian_sqr(Interval(x.lo), p).lo
+        hi = russian_sqr(Interval(x.hi), p).hi
+        return Interval(lo, hi)
+    else
+        hi_lo = russian_sqr(Interval(x.lo), p).hi
+        hi_hi = russian_sqr(Interval(x.hi), p).hi
+        return Interval(RR(0), max(hi_lo, hi_hi))
     end
 end
 
 function sqrt(x::Interval)
-    half = RR(1)/RR(2)
-    @assert half*RR(2) == RR(1)
     @assert x.lo >= RR(0)
-    setrounding(RR, RoundDown)
-    a = x.lo^half
-    setrounding(RR, RoundUp)
-    b = x.hi^half
-    setrounding(RR, RoundNearest)
-    widen(a, b)
+    lo = Base.sqrt(x.lo) #IEEE-754
+    hi = Base.sqrt(x.hi) #IEEE-754
+    return nonnegative(widen(lo, hi))
 end
 
 comparable(x::Interval, y::Interval) = x.hi <= y.lo || x.lo >= y.hi
 
-# note that interval comparison needs to be handled carefully!
-# if we define X<Y <=> x<y forall x,y
-# and X==Y <=> x==y forall x,y (this would mean both are identical singletons)
-# but we'd most likely want X<=Y <=> x<=y forall x,y
-# and that is not equivalent to X<Y or X==Y.
 (<)(x::Interval, y::Interval) = x.hi < y.lo
 (>)(x::Interval, y::Interval) = y<x   
-
-setrounding(t::Type{Float64}, mode) = nothing
-#setrounding(t::Type{Double64}, mode) = nothing
 
 function bound_quasi_power_careful(k0, g_norm::Interval)
     @assert(g_norm.hi < Interval(1))
@@ -208,7 +214,6 @@ function bound_quasi_power(k0, g_norm::Interval)
     @assert(g_norm.hi > Interval(0))
     # important to make the interval trivial, here
     k = k0 + 1
-    setrounding(RR, RoundUp)
     latest = nextfloat(k * nextfloat(g_norm.hi ^ (k - 1)))
     greatest_upper = latest
     while latest >= greatest_upper
@@ -218,7 +223,6 @@ function bound_quasi_power(k0, g_norm::Interval)
         k = k + 1
         latest = nextfloat(k * nextfloat(g_norm.hi ^ (k - 1)))
     end
-    setrounding(RR, RoundNearest)
     Interval(0, greatest_upper)
 end
 
@@ -232,17 +236,6 @@ function bound_quasi_power_2(c::Interval, d::Interval, M::Int)
     end
     biggest
 end
-
-# we established that the two methods produce the same results
-#for k in 1:100
-#    p = Int(floor(rand()*500))
-#    x = 1-0.001*rand()
-#    bound1 = bound_quasi_power(p, Interval(x)).hi
-#    bound2 = bound_quasi_power_crude(p, Interval(x)).hi
-#    if bound1 != bound2
-#        println("$x: $bound1 != $bound2")
-#    end
-#end
 
 function balanced(i::Interval)
     a = max(abs(i.lo), abs(i.hi))
